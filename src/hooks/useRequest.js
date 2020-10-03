@@ -11,8 +11,7 @@ const useRequest = (initUrl, content) => {
 		const fetchProduct = async () => {
 			try {
 				setLoading(true);
-				const response = await axios(initUrl);
-				console.log(response);
+				const response = await axios(initUrl, content);
 				if (!ignore) setData(response.data);
 			} catch (err) {
 				setError({ error: err });
